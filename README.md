@@ -1,36 +1,37 @@
 # 🧠 Project 1 — Fake Attack Log Investigation (Splunk)
 
 ## 🎯 Objective
-Simulate a security investigation using *Splunk Free (Local)* and public logs to detect suspicious login activities and understand how analysts use SIEM tools to identify potential threats.
+Simulate a security investigation using *Splunk Free (Local)* and a custom dataset to detect suspicious login 
+activities and uderstand how analysts use SIEM tools to identify potential threats.
 
 ---
 
 ## 🧩 Dataset
-Downloaded from: [https://github.com/mdecrevoisier/EVTX-to-MITRE-Attack](https://github.com/mdecrevoisier/EVTX-to-MITRE-Attack)  
-Type: Windows Event Logs (.evtx)
+A custom dataset was manually created in a .csv file named login_logs.csv, simulating Windows login events.
+Each record includes fields such as timestamp, username, source IP, and login status (success or failed).
+This file was indexed in Splunk under the index name portifolio.
 
 ---
 
 ## ⚙️ Steps Summary
-1. Installed and opened *Splunk Free* locally.  
-2. Indexed .evtx files from the GitHub dataset.  
-3. Used *Search & Reporting* to run basic queries:
-   - Count all events:  
-     
-     index="evtx_mitre"
-     
-   - Failed login attempts:  
-     
-     index="evtx_mitre" EventCode=4625
-     
-   - Successful logins from unusual IPs:  
-     
-     index="evtx_mitre" EventCode=4624 NOT src_ip="192.168.*"
-     
-4. Created a *Dashboard* with:
-   - Failed vs successful logins  
-   - Top source IPs  
-   - Timeline of login attempts  
+ 1. Installed and opened Splunk Free locally on an Ubuntu virtual machine.
+ 2. Created and indexed the file "login_logs.csv" into Splunk using the index "portifolio".
+ 3. Used Search & Reporting to run basic queries:
+
+    - Count all events:
+       index="portifolio"
+      
+    - Failed login attempts:
+       index="portifolio" status="failed"
+
+    -Successful logins from unusual IPs:
+     index="portifolio" status="success" NOT IP="192.168.*"
+
+ 4. Created a Dashboard including:
+    Failed vs successful logins
+    Top source IP addresses
+    Timeline of login attempts
+    Table view of all login events
 
 ---
 
@@ -52,9 +53,9 @@ Table of events:
 ---
 
 ## 💡 Key Takeaways
-- Learned how to index and query logs in Splunk.  
-- Understood how Event IDs 4624 (login success) and 4625 (login failed) relate to authentication events.  
-- Gained hands-on experience creating dashboards for attack detection.  
+- Gained hands-on experience indexing and analyzing CSV log data in Splunk.  
+- Learned how to filter, visualize, and interpret login activities.  
+- Understood how data can simulate security incidents for learning SIEM operations.  
 
 ---
 
@@ -67,7 +68,7 @@ Table of events:
 
 ## 🧰 Tools Used
 - *Splunk Free (Local)*  
-- *Windows EVTX logs*  
+- *Custom CSV log dataset* 
 - *Markdown for documentation (GitHub)*
 
 ---
@@ -76,6 +77,7 @@ Table of events:
 Jessica Braz — Cybersecurity Student  
 Location: Australia  
 GitHub: https://github.com/jessicabraz
+
 
 
 
