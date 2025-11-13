@@ -37,7 +37,8 @@ Type: Windows Event Logs (.evtx)
 ## 📊 Dashboard Example
 (Insert a screenshot here)  
 Example:
-![Dashboard Example](images/dashboard-example.png)
+![Dashboard Example](dashboard-example.png)
+
 
 ---
 
@@ -73,4 +74,5 @@ Example:
 Jessica Braz — Cybersecurity Student  
 Location: Australia  
 GitHub: https://github.com/jessicabraz
+
 
