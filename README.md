@@ -38,7 +38,10 @@ This file was indexed in Splunk under the index name portifolio.
 ## 📊 Dashboard Example
   
 Example:
+
 ![Dashboard Example](dashboard-example.png)
+
+
 
 
 Table of events:
@@ -79,6 +82,7 @@ Table of events:
 Jessica Braz — Cybersecurity Student  
 Location: Australia  
 GitHub: https://github.com/jessicabraz
+
 
 
 
